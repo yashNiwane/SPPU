@@ -1,0 +1,12 @@
+.darkmode{
+    height: 45px;
+    width: 50px;
+    border-radius:20px;
+    z-index:2;
+      align-items: center;
+      justify-content: center;
+      background-color: #063146;
+      position: fixed;
+      top:3px;
+      right:3px;
+}

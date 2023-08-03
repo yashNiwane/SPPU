@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+
+
+<script src="https://kit.fontawesome.com/9255b8d5e5.js" crossorigin="anonymous"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+	font-family: 'Robot', sans-serif;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding:0;
+  
+	
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+.navbar{
+  position: fixed;
+	width: 100%;
+	height: 50px;
+	background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.6474358974358974) 0%, rgba(157,243,246,0.7355769230769231) 100%);
+	z-index: 1;
+  border-radius: 15px;
+  border: 5px;
+  
+	
+	
+}
+
+html { overflow-y: scroll; }
+.sidebar{
+	position: fixed;
+	left: -250px;
+	width: 250px;
+	height: 100%;
+	background: #042331;
+	transition: all .5s ease;
+	z-index: 2;
+
+}
+.sidebar header{
+	font-size: 22px;
+	color: white;
+	text-align: center;
+	line-height: 70px;
+	background: #063146;
+	user-select: none;
+}
+.sidebar ul a{
+	display: block;
+	height: 100%;
+	width: 100%;
+	line-height: 65px;
+	font-size: 20px;
+	color: white;
+	padding-left: 40px;
+	box-sizing: border-box;
+	border-top: 1px solid rgba(255,255,255,.1);
+	border-bottom: 1px solid black;
+	transition: 0.5s;
+	z-index: 2;
+	border-radius: 10px;
+}
+ul li:hover a{
+	padding-left: 50px;
+}
+.sidebar ul a i{
+	margin-right: 16px;
+}
+#check{
+	display: none;
+}
+label #btn,label #cancel{
+	position: absolute;
+	cursor: pointer;
+	background: #042331;
+	border-radius: 0px;
+	width: 32px;
+	
+	
+}
+label #btn{
+  margin-right: 0.5em;
+
+	top: 3px;
+	font-size: 30px;
+	color: 	white;
+	padding: 6px 12px;
+	transition: all .5s;
+	width: 26px;
+	background-color: 	#063146;
+	border-radius: 20px;
+}
+label #cancel{
+	z-index: 1111;
+	left: -195px;
+	top: 17px;
+	font-size: 30px;
+	color: #0a5275;
+	padding: 4px 9px;
+	transition: all .5s ease;
+	
+}
+#check:checked ~ .sidebar{
+	left: 0;
+}
+#check:checked ~ label #btn{
+	left: 250px;
+	opacity: 0;
+	pointer-events: none;
+	
+}
+#check:checked ~ label #cancel{
+	left: 195px;
+}
+.dark-mode {
+  background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,0.8782051282051282) 0%, rgba(0,0,0,0.8605769230769231) 50%, rgba(0,0,0,0.8669871794871795) 100%);
+  color: white;
+  
+}
+.fa-moon{
+  color :white;
+	width: 20px;
+	height: 20px;
+
+}
+
+.darkmode{
+  height: 45px;
+  width: 50px;
+  border-radius:20px;
+  z-index:2;
+	align-items: center;
+	justify-content: center;
+	background-color: #063146;
+	position: fixed;
+	top:3px;
+	right:3px;
+	
+}
+
+
+.dark.mode{
+  height: 40px;
+  width:100%;
+  background-color:green;
+}
+
+.logo{
+position: absolute;
+height:120px;
+width:120px;
+border-radius: 50%;
+top: 120px;
+left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+ border: solid 5px;
+border-color: rgb(94,121,255);
+  
+  
+}	
+
+.logoimg{
+  height:120px;
+  width:120px;
+  align-items: top;
+  border-radius: 50%;
+}
+
+.mission{
+  position: relative;
+  top: 200px;
+  align-items:center;
+  text-align: center;
+}
+
+
+.fe{
+  
+	position: relative;
+	top: 220px;
+	left: 10%;
+	height:70px;
+	width:80%;
+	padding: 0.6em 2em;
+	color: rgb(255, 255, 255);
+	background: ghostwhite;
+  cursor: pointer;
+  position: relative;
+	border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  
+  
+}
+
+
+.se{
+	position: relative;
+	top: 240px;
+	left: 10%;
+	height:70px;
+	width:80%;
+  padding: 0.6em 2em;
+	color: rgb(255, 255, 255);
+	background: ghostwhite;
+  cursor: pointer;
+  position: relative;
+	border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+
+.te{
+	position: relative;
+	top: 260px;
+	left: 10%;
+	height:70px;
+	width:80%;
+	padding: 0.6em 2em;
+	color: rgb(255, 255, 255);
+	background: ghostwhite;
+  cursor: pointer;
+  position: relative;
+	border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+
+.le{
+	position: relative;
+	top: 280px;
+	left: 10%;
+	height:70px;
+	width:80%;
+	padding: 0.6em 2em;
+	color: rgb(255, 255, 255);
+	background: ghostwhite;
+  cursor: pointer;
+  position: relative;
+	border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+
+.fe:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.se:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.te:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+
+.le:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+
+
+</style>
+</head>
+
+<body>
+<div class="navbar">
+<input type="checkbox" id="check">
+
+<label for="check">
+<i class="fas fa-bars" id="btn"></i>
+<i class="fas fa-times" id="cancel"></i>
+</label>
+
+<div class ="sidebar">
+<header>Social Links</header>
+<ul>
+<li><a href="https://www.instagram.com/sppu_support/"> <i class="fa-brands fa-instagram"></i> instagram</a></li>
+<li><a href="https://twitter.com/SppuSupport"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+<li><a href="https://m.youtube.com/channel/UCSxxP33hRXPTCn4gcmpam6g"><i class="fa-brands fa-youtube"></i>youtube</a></li>
+<li><a href="https://chat.whatsapp.com/Il2bdFMxT9IL73NysucyRC"> <i class="fa-brands fa-whatsapp"></i> whatsapp</a></li>
+<li><a href="mailto:SPPU0000@gmail.com"> <i class="fa-solid fa-envelope"></i> contact</a></li>
+
+</ul>
+</div>
+
+<button type="submit" onclick="myFunction()" class="darkmode"><i class="fas fa-moon fa-2x"></i>
+  </button>
+  
+  </div>
+ 
+  <div class="logo"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8TR7FKXEwhDomtxXk1lnuzR-OAgIwVkFuUPSBW_dW_NPcjXQv3CpCDC7i1s0OYIHFZcBDuL0FQkUWmr-JdovNZPAYWMAJAKTrHD19HOYEdDqw7znLv8MhujUuBl3oZHzduzV9-j8qER4C7tB6XxRsWl28s0K_oR2eOwhD9rzLJC1KFtkwZIXou--r_g/s500/20220527_055921_0000.png" class="logoimg"></div>
+ 
+
+<div  class="mission">
+<pre>
+We love to provide you 
+all the study material 
+at one place for free,
+ plz recommend us what you need
+at <b>"SPPU0000@gmail.com"</b>
+</pre></div>
+
+<div  class="year">
+  
+<a href="fy.html"><button href="/fy.html" type="submit"  class="fe" style="font-size: 130%;"><strong style="color:black;"><em>First Year</em></strong></button></a>
+
+
+<a href="sy.html"><button type="submit"  class="se"style="font-size: 130%;"><strong style="color:black;"><em>Second Year</button></a>
+
+
+<button href="ty.html" type="submit"  class="te" style="font-size: 130%;"><strong style="color:black;"><em>Third Year</button>
+
+
+<button href="be.html" type="submit"  class="le"style="font-size: 130%;"><strong style="color:black;"><em>Fourth Year</button>
+
+
+</div>
+
+
+<script>function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+  }</script>
+ </body>
+ </html>
